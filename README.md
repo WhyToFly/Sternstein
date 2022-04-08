@@ -11,5 +11,7 @@ Level design by Linus Wamser (TODO)
 
 
 
+The game can be run on real hardware or in an emulator (like bgb, see below).
+
 https://user-images.githubusercontent.com/56527799/162344965-68ad9a23-0633-4b2f-8f9d-484b07138dd0.mov
 
