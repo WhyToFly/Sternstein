@@ -7,7 +7,7 @@ Music player by AntonioND (https://github.com/AntonioND/gbt-player)
 
 Programming, music and box art by Christopher Hahn (https://github.com/WhyToFly)
 
-Level design by Linus Wamser (TODO)
+Level design by Linus Wamser (https://github.com/Linukar)
 
 
 
