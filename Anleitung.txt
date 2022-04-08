@@ -1,0 +1,49 @@
+Anleitung Sprites, Maps für Sternsteins Adventure 2
+
+TILES
+1. gbtd22/GBTD.EXE öffnen (GameBoy Tile Designer)
+2. Tiles malen: 
+- 0 leer lassen (Hintergrund)
+- 1 = tile für Hindernis (Tod bei Berührung)
+- 2 = Münze o.Ä.
+- Rest = normale Blöcke
+
+3. Mit File->save as... speichern
+4. File->Export to... auswählen
+5. Type auf GBDK C file (*.c) stellen
+6. Filename in Sternstein/tiles wählen
+7. Bei Label "tile_data" eintragen
+8. Bei "From" 0 To [höchster index] eintragen (-> z.B. 16 tiles: 0 to 15)
+9. Mit File->Export exportieren
+
+MAP
+10. gbmb18/GBMB.EXE öffnen (GameBoy Map Builder)
+11. File->Map Properties... öffnen
+12. Width = [Breite der Map], Height = 18, 
+Filename=in Schritt 3 gespeicherte Tiles (nicht *.c Datei)
+13. Map bauen (Rechtsklick=Platzierung)
+14. Mit File->Save As..
+15. File->Export To... auswählen
+16. Type auf GBDK C file (*.c) stellen
+17. Filename in Sternstein/map wählen
+18. Bei Label "map_data1" eintragen
+19. Bei Tab "Location Format" bei "Property" 
+in Zeile 1 "[Tile number]" auswählen
+20. Bei "Plane count" "1 plane (8 bits)" auswählen
+21. Mit File->Export exportieren
+
+TESTEN
+22. in main.c in Zeile 5 #define MapSizeX [Breite der Map] ändern
+23. in main.c in Zeile 1028 auf 
+set_bkg_data(0, [Anzahl tiles], &tile_data); ändern
+24. in [Dateiname Map].c "unsigned char map_data1[] =" 
+zu "const unsigned char map_data1[] =" ändern
+25. in [Dateiname Tiles].c "unsigned char tile_data[] ="
+zu "const unsigned char tile_data[] =" ändern
+26. in make.bat
+[Dateiname tiles] und [Dateiname Map] eintragen
+ändern
+27. make.bat ausführen
+28. hoffentlich keine Fehlermeldungen bekommen, mit Enter bestätigen
+29. mit w(oben)/Pfeiltaste oben (A) springen, 
+mit s (unten)/Pfeiltaste links (B) rutschen, mit Enter (Start) starten 
